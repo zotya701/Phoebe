@@ -302,31 +302,58 @@ public class Robot implements Landable, Jumping{
 	public Point getPosition(){
 		return this.position;
 	}
-	
+	/**
+	 * Visszatér a robot sebességvektorával
+	 * @return A robot sebességvektora
+	 */
 	public Point getVelocity(){
 		return this.velocity;
 	}
-	
+	/**
+	 * Visszatér a robot állapotával
+	 * @return A robot állapota
+	 */
 	public String getStatus(){
 		return this.state.toString();
 	}
 	
+	
+	/**
+	 * Visszatér a robot maradék ragacscsapdáinak számával
+	 * @return A csapdák száma
+	 */
 	public int getGooTrapsLeft(){
 		return this.gooTraps;
 	}
 	
+	/**
+	 * Visszatér a robot maradék olajcsapdáinak számával
+	 * @return A csapdák száma
+	 */
 	public int getOilTrapsLeft(){
 		return this.oilTraps;
 	}
 	
+	/**
+	 * Visszatér a robot ID-jével
+	 * @return A robot ID-je
+	 */
 	public int getId(){
 		return this.id;
 	}
 	
+	/**
+	 * Visszatér, hogy a robot-e éppen a soron lévõ
+	 * @return Igaz ha a robot a soron lévõ
+	 */
 	public boolean isCurrent(){
 		return this.current;
 	}
 	
+	/**
+	 * Beállítja a robot current változóját
+	 * @param c Igazra állítja, ha a robot az épp soron lévõ, hamisra ha már nem
+	 */
 	public void isCurrent(boolean c){
 		this.current=c;
 	}
