@@ -104,7 +104,7 @@ public class GameManager {
 				    		x2=Integer.parseInt(p[2]);
 				    		y2=Integer.parseInt(p[3]);
 				    		//GameManager.robots.add(new Robot(this.map, new Point(x1, y1), new Point(x2, y2)));
-				    		GameManager.robots.add(RobotFactory.create(this.map, new Point(x1, y1), new Point(x2, y2), new Point(this.map.getSize())));
+				    		GameManager.robots.add(RobotFactory.create(this.map, new Point(x1, y1), new Point(x2, y2)));
 				    	}
 				    }
 				    BR.close();
