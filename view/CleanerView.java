@@ -41,7 +41,7 @@ public class CleanerView implements Drawable{
 	}
 	
 	/**
-	 * Igazzal tér vissza, ha a kapott objektum megegyezik a cleaner attribútummal
+	 * Igazzal tér vissza, ha a kapott referencia megegyezik a cleaner attribútummal
 	*/
 	
 	public boolean equals(Object o){
