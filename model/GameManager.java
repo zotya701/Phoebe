@@ -320,18 +320,31 @@ public class GameManager {
 		this.gameEnded=true;
 	}
 	
+	
+	/**
+	 * Visszaadja az épp soron lévõ játékost
+	 */
 	public int getCurrentPlayer(){
 		return this.currentPlayer;
 	}
 	
+	/**
+	 * Visszatér a pálya méretével
+	 */
 	public Point getMapSize(){
 		return this.map.getSize();
 	}
 	
+	/**
+	 * Visszatér az eltelt körök számával
+	 */
 	public int getCurrentRound(){
 		return this.round;
 	}
 	
+	/**
+	 * Visszaadja, hogy véget ért-e a játék
+	 */
 	public boolean gameEnded(){
 		return this.gameEnded;
 	}
