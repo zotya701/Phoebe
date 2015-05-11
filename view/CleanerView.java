@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import model.Cleaner;
 
 /**
- * A hozz√° tartoz√≥ Cleaner grafikus megjelen√≠t√©s√©rt felel≈ës oszt√°ly
+ * A hozz· tartozÛ Cleaner grafikus megjelenÌtÈsÈÈrt felelıs oszt·ly
 */
 
 public class CleanerView implements Drawable{
@@ -14,7 +14,7 @@ public class CleanerView implements Drawable{
 	private Cleaner cleaner;
 	
 	/**
-	 * Konstruktor, be√°ll√≠tja a cleaner attrib√∫tum√°t a kapott Cleanerre
+	 * Konstruktor, be·llÌtja a cleaner attrib˙tum·t a kapott Cleanerre
 	*/
 	
 	public CleanerView(Cleaner c){
@@ -22,17 +22,16 @@ public class CleanerView implements Drawable{
 	}
 	
 	/**
-	 * Kirajzolja a hozz√° tartoz√≥ Cleaner objektumot
+	 * Kirajzolja a hozz· tartozÛ Cleaner objektumot
 	*/
 	
 	@Override
 	public void Draw(Graphics2D g2){
-		g2.drawImage(View.imgOfCleaner,cleaner.getPosition().x*25,
-				cleaner.getPosition().y*25,25,25,null);
+		g2.drawImage(View.imgOfCleaner, cleaner.getPosition().x*25, cleaner.getPosition().y*25+10, 10, 10, null);
 	}
 	
 	/**
-	 * Visszaadja a kirajzol√°si priorit√°s√°t
+	 * Visszaadja a kirajzol·si priorit·s·t
 	*/
 	
 	@Override
@@ -41,19 +40,19 @@ public class CleanerView implements Drawable{
 	}
 	
 	/**
-	 * Igazzal t√©r vissza, ha a kapott referencia megegyezik a cleaner attrib√∫tummal
+	 * Igazzal tÈr vissza, ha a kapott referencia megegyezik a cleaner attrib˙tummal
 	*/
 	
 	public boolean equals(Object o){
-		return this==o;
+		return cleaner==o;
 	}
 	
 	/**
-	 * √ñsszehasonl√≠tja a kapott Drawable √©s a saj√°t priorit√°s√°t majd visszaadja az eredm√©nyt
+	 * ÷sszehasonlÌtja a kapott Drawable Ès a saj·t priorit·s·t, majd visszaadja az eredmÈnyt
 	*/
 	
 	public int compareTo(Drawable d){
-		return Integer.compare(CleanerView.priority,d.getPriority());
+		return Integer.valueOf(CleanerView.priority).compareTo(Integer.valueOf(d.getPriority()));
 	}
 
 }

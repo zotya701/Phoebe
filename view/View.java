@@ -24,7 +24,7 @@ import model.*;
 import controller.*;
 
 /**
- * A program grafikus megjelenítéséért felelõs osztály 
+ * A program grafikus megjelenítéséért felelõs osztály.
  */
 public class View extends JFrame{
 
@@ -42,6 +42,13 @@ public class View extends JFrame{
 	public static BufferedImage imgOfRobot;
 	public static BufferedImage imgOfCleaner;
 	
+	/**
+	 * Konstruktor, inicializálja a controller adattagot a kapott c objektummal,
+	 * inicializálja a többi adattagot, beállítja õket a megfelelõ helyre,
+	 * és beállítja az esemény kezelõket.
+	 * 
+	 * @param c
+	 */
 	public View(Controller c){
 		
 		try {
@@ -63,8 +70,6 @@ public class View extends JFrame{
 		this.btnNewGame=new JButton("NewGame");
 		this.btnExit=new JButton("Exit");
 		
-		//this.mainPanel.setPreferredSize(new Dimension(1500,750));
-		//this.mapChoosingScreenPanel.setPreferredSize(new Dimension(1500,750));
 		
 		this.gameScreenPanel.setLayout(new BorderLayout());
 		this.gameScreenPanel.add(this.gamePanel, BorderLayout.CENTER);
@@ -124,12 +129,27 @@ public class View extends JFrame{
 		});
 	}
 	
+	/**
+	 * A fõ panel cardlayoutot használ, és az ebben lévõ
+	 * elemek közül a következõt mutatja
+	 */
 	public void showNextCard(){
 	}
 	
+	/**
+	 * Meghívja a gamePanel updateGraphics metódusát,és a
+	 * controlPanel update metódusát, majd önmagán a repaint metódust
+	 */
 	public void update(){
 	}
 	
+	/**
+	 * Meghívja a gamePanel init metódusát a kapott gm objektummal,
+	 * majd a controlPanel init metódusát a kapott objektummal,
+	 * végül önmagán a pack metódust
+	 * 
+	 * @param gm
+	 */
 	public void init(GameManager gm){
 	}
 	

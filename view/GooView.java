@@ -20,6 +20,7 @@ public class GooView implements Drawable{
 	public GooView(Goo g){
 		goo=g;
 	}
+	
 	/**
 	 * A goo adattag health adattagjának függvényében rajzol ki egy zöld kört a goo pozíciójának megfelelõ helyre.
 	 */
@@ -28,8 +29,8 @@ public class GooView implements Drawable{
 		g2.setColor(Color.GREEN);
 		int h=goo.getHealth();
 		g2.fillOval(goo.getPosition().x*25+13-(int)(h*2.5), goo.getPosition().y*25+12-h*2, h*5, h*5);
-		 
 	}
+	
 	/**
 	 * Visszatér a priority adattag értékével.
 	 */
@@ -38,19 +39,18 @@ public class GooView implements Drawable{
 		return priority;
 	}
 	
-	
 	/**
 	 *  Igaz, ha o referenciája megegyezik gooéval, egyébként hamis.
 	 */
 	public boolean equals(Object o){
-		return this==o;
+		return goo==o;
 	}
 	
 	/**
 	 * Integer compareTo metódusával összehasonlítja a saját priority-jét a kapott objektum priority-jével.
 	 */
 	public int compareTo(Drawable d){
-		return Integer.compare(GooView.priority,d.getPriority());
+		return Integer.valueOf(GooView.priority).compareTo(Integer.valueOf(d.getPriority()));
 	}
 	
 }
