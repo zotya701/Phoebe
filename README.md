@@ -1,17 +1,14 @@
-# phoebe
+# phoebeProto
 
-Szoftverlabor 4 Grafikus
+Szoftverlabor 4 Proto
 
 A forrásfájlok kódolása Cp1250, másnéven Windows-1250.
 
 Könyvtár hierarchia futtatás előtt:
-│   01_compile.cmd
-│   02_copy_files.cmd
-│   03_run.cmd
-│   ALL.cmd
-│   create_jar.cmd
+│   compile.cmd
 │   MANIFEST.MF
 │   README.md
+│   run.cmd
 │
 ├───maps
 │       goo.map
@@ -61,45 +58,22 @@ Könyvtár hierarchia futtatás előtt:
             RobotView.java
             View.java
 		
-Fordítás és futtatás egyszerűen:
+Fordítás és futtatás:
 	Sorban futtatjuk az alábbi fájlokat a gyökérkönyvtárból:
-		01_compile.cmd
-		02_copy_files.cmd
-		03_run.cmd
+		compile.cmd
+		run.cmd
 		
 	vagy:
-		ALL.cmd
-		03_run.cmd
-	vagy:
-		ALL.cmd
+		compile.cmd
 		Phoebe.jar
-	vagy:
-		01_compile.cmd
-		02_copy_files.cmd
-		create_jar.cmd
-		Phoebe.jar
-	
-Parancssorból:
-	A gyökér könyvtárban shift+jobb klikk, Open command window here, majd futtatjuk az alábbi parancsokat:
-		
-		Fordítás:		if not exist bin mkdir bin
-						javac -d bin src/controller/*.java src/model/*.java src/view/*.java
-		
-		Futtatás:		if not exist "bin\maps" mkdir "bin\maps"
-						xcopy "maps\*.*" "bin\maps" /y
-						xcopy "resources\*.png" "bin\" /y
-						cd bin
-						java model.GameManager
-		
+
+
 Könyvtár hierarchia futtatás után:
-│   01_compile.cmd
-│   02_copy_files.cmd
-│   03_run.cmd
-│   ALL.cmd
-│   create_jar.cmd
+│   compile.cmd
 │   MANIFEST.MF
 │   Phoebe.jar
 │   README.md
+│   run.cmd
 │
 ├───bin
 │   │   cleaner.png
