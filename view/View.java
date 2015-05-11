@@ -23,6 +23,9 @@ import javax.swing.JTextField;
 import model.*;
 import controller.*;
 
+/**
+ * A program grafikus megjelenítéséért felelõs osztály 
+ */
 public class View extends JFrame{
 
 	private static final long serialVersionUID = -7943582539078518219L;
