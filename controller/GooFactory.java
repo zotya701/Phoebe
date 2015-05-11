@@ -2,27 +2,25 @@ package controller;
 
 import java.awt.Point;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 
-import model.Cleaner;
-import model.Goo;
-import view.CleanerView;
-import view.Drawable;
-import view.GamePanel;
-import view.GooView;
+import model.*;
+import view.*;
 
 /**
- * Goo objektumokat létrehozó és törlõ osztály
- *
+ * Goo objektumokat és a hozzájuk tartozó GooView-kat
+ * létrehozó és törlõ osztály
  */
 
 public class GooFactory {
 	
 	/**
-	 * létrehoz egy új Goo-t majd visszaadja azt
-	 * @param p
-	 * @return
+	 * létrehoz egy új Goo-t a hozzá tartozó
+	 * GooView-val együtt, a GooView-t
+	 * belerakja a drawableViews listába,
+	 * majd visszatér a létrehozott Gooval
+	 * 
+	 * @param p Ragacsfolt pozíciója
+	 * @return A létrehozott Goo objektum
 	 */
 	
 	public static Goo create(Point p){
@@ -33,8 +31,10 @@ public class GooFactory {
 	}
 	
 	/**
-	 * Törli a paraméterben átadott Goo-t
-	 * @param g
+	 * Törli a paraméterben átadott Goohoz
+	 * tartozó GooViewt a drawableViews listából
+	 * 
+	 * @param g Törölni kívánt GooView-hoz tartozó Goo referenciája
 	 */
 	
 	public static void remove(Goo g){

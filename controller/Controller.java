@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.Point;
+import java.io.File;
 
 import model.GameManager;
 import model.Robot;
@@ -20,7 +21,7 @@ public class Controller {
 	
 	/**
 	 * A Controller konstruktora
-	 * létrehot egy új View objektumot és beállítja azt a view attribútumába
+	 * létrehoz egy új View objektumot és beállítja azt a view attribútumába
 	 */
 	
 	public Controller(){
@@ -94,6 +95,7 @@ public class Controller {
 		int currentPlayer=gm.getCurrentPlayer();				//lekérdezi az aktuális játékos azonosítóját
 		Robot robot=GameManager.robots.get(currentPlayer);		//elkéri az azonosítóhoz tartozó robotot
 		robot.placeGoo();										//majd a robot lehelyezi a csapdát a saját mezõjére
+		view.update();											//végül frissül a view
 	}
 	
 	/**
@@ -104,6 +106,7 @@ public class Controller {
 		int currentPlayer=gm.getCurrentPlayer();				//lekérdezi az aktuális játékos azonosítóját
 		Robot robot=GameManager.robots.get(currentPlayer);		//elkéri az azonosítóhoz tartozó robotot
 		robot.placeOil();										//majd a robot lehelyezi a csapdát a saját mezõjére
+		view.update();											//végül frissül a view
 	}
 	
 	/**
@@ -111,7 +114,12 @@ public class Controller {
 	 */
 	
 	public void txtLoadMapEventHandler(String filename){
-		gm.loadMap(filename);
+		if(new File("maps/"+filename+".map").exists() && new File("maps/"+filename+".robots").exists()){
+				this.gm.loadMap(filename);
+				this.view.init(this.gm);
+				this.view.showNextCard();
+				this.view.update();
+		}
 	}
 	
 	/**
