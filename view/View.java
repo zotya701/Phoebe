@@ -106,6 +106,7 @@ public class View extends JFrame{
 		this.pack();
 		this.setVisible(true);
 		
+		//eseménykezelõk
 		this.btnNewGame.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				controller.btnNewGameEventHandler();
@@ -124,7 +125,7 @@ public class View extends JFrame{
 		});
 		this.txtLoadMap.addFocusListener(new FocusAdapter(){
 			public void focusGained(FocusEvent e){
-				txtLoadMap.setText("");
+				txtLoadMap.setText("");		//így belekattintás után rögtön írhatjuk a pálya nevét, nem kell elõtte kitörölni a szöveget
 			}
 		});
 	}
@@ -134,6 +135,7 @@ public class View extends JFrame{
 	 * elemek közül a következõt mutatja
 	 */
 	public void showNextCard(){
+		((CardLayout)this.mainPanel.getLayout()).next(this.mainPanel);
 	}
 	
 	/**
@@ -141,6 +143,9 @@ public class View extends JFrame{
 	 * controlPanel update metódusát, majd önmagán a repaint metódust
 	 */
 	public void update(){
+		this.gamePanel.updateGraphics();
+		this.controlPanel.update();
+		this.repaint();
 	}
 	
 	/**
@@ -151,6 +156,9 @@ public class View extends JFrame{
 	 * @param gm
 	 */
 	public void init(GameManager gm){
+		this.gamePanel.init(gm);
+		this.controlPanel.init(gm);
+		this.pack();
 	}
 	
 }
