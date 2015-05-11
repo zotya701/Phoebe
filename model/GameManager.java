@@ -293,21 +293,21 @@ public class GameManager {
 						}
 					}
 				}
-				int robotsAlive=0;
-				for(Robot r : GameManager.robots){
-					if(r.isAlive()){
-						robotsAlive=robotsAlive+1;
-					}
-				}
-				if(round>=100 || robotsAlive<=1){
-					this.end();
-				}
 				
 				currentPlayer	=	0;
 				round			=	round+1;
 				while(currentPlayer<robots.size() && !robots.get(currentPlayer).isAlive()){
 					currentPlayer	=	currentPlayer+1;
 				}
+			}
+			int robotsAlive=0;
+			for(Robot r : GameManager.robots){
+				if(r.isAlive()){
+					robotsAlive=robotsAlive+1;
+				}
+			}
+			if(round>=100 || robotsAlive<=1){
+				this.end();
 			}
 			robots.get(currentPlayer).isCurrent(true);
 		}
