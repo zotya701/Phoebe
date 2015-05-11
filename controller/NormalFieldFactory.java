@@ -2,27 +2,25 @@ package controller;
 
 import java.awt.Point;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 
-import model.Cleaner;
-import model.NormalField;
-import view.CleanerView;
-import view.Drawable;
-import view.GamePanel;
-import view.NormalFieldView;
+import model.*;
+import view.*;
 
 /**
- * NormalField objektumokat létrehozó és törlõ osztály
- *
+ * NormalField objektumokat és a hozzájuk tartozó NormalFieldView-kat
+ * létrehozó és törlõ osztály
  */
 
 public class NormalFieldFactory {
 	
 	/**
-	 * létrehoz egy új NormalField-et majd visszaadja azt
-	 * @param p
-	 * @return
+	 * létrehoz egy új NormalFieldet a hozzá tartozó
+	 * NormalFieldView-val együtt, a NormalFieldView-t
+	 * belerakja a drawableViews listába,
+	 * majd visszatér a létrehozott NormalField-el
+	 * 
+	 * @param p NormalField pozíciója
+	 * @return A létrehozott NormalField objektum
 	 */
 	
 	public static NormalField create(Point p){
@@ -33,8 +31,10 @@ public class NormalFieldFactory {
 	}
 	
 	/**
-	 * Törli a paraméterben átadott NormalField-et
-	 * @param nf
+	 * Törli a paraméterben átadott NormalFieldhez
+	 * tartozó NormalFieldViewt a drawableViews listából
+	 * 
+	 * @param nf Törölni kívánt NormalFieldView-hoz tartozó NormalField referenciája
 	 */
 	
 	public static void remove(NormalField nf){

@@ -1,27 +1,27 @@
 package controller;
-import java.util.List;
+
 import java.awt.Point;
 import java.util.Collections;
-import java.util.Iterator;
-import java.util.Map;
 
-import view.CleanerView;
-import view.Drawable;
-import view.GamePanel;
-import model.Cleaner;
+import model.*;
+import view.*;
 
 /**
- * Cleaner objektumokat létrehozó és törlõ osztály
- *
+ * Cleaner objektumokat és a hozzájuk tartozó CleanerView-kat
+ * létrehozó és törlõ osztály
  */
 
 public class CleanerFactory{
 	
 	/**
-	 * létrehoz egy új Cleanert majd visszaadja azt
-	 * @param map
-	 * @param p
-	 * @return
+	 * létrehoz egy új Cleanert a hozzá tartozó
+	 * CleanerView-val együtt, a CleanerView-t
+	 * belerakja a drawableViews listába,
+	 * majd visszatér a létrehozott Cleanerrel
+	 *
+	 * @param map Referencia a pályára
+	 * @param p Cleaner pozíciója
+	 * @return	A létrehozott Cleaner objektum
 	 */
 	
 	public static Cleaner create(Map map, Point p){
@@ -32,8 +32,10 @@ public class CleanerFactory{
 	}
 	
 	/**
-	 * Törli a paraméterben átadott Cleanert
-	 * @param c
+	 * Törli a paraméterben átadott Cleanerhez
+	 * tartozó CleanerViewt a drawableViews listából
+	 * 
+	 * @param c Törölni kívánt CleanerView-hoz tartozó Cleaner referenciája
 	 */
 	
 	public static void remove(Cleaner c){							
