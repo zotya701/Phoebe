@@ -104,7 +104,7 @@ public class GameManager {
 				    		x2=Integer.parseInt(p[2]);
 				    		y2=Integer.parseInt(p[3]);
 				    		//GameManager.robots.add(new Robot(this.map, new Point(x1, y1), new Point(x2, y2)));
-				    		GameManager.robots.add(RobotFactory.create(this.map, new Point(x1, y1), new Point(x2, y2), new Point(this.map.getSize())));
+				    		GameManager.robots.add(RobotFactory.create(this.map, new Point(x1, y1), new Point(x2, y2)));
 				    	}
 				    }
 				    BR.close();
@@ -320,18 +320,31 @@ public class GameManager {
 		this.gameEnded=true;
 	}
 	
+	
+	/**
+	 * Visszaadja az épp soron lévõ játékost
+	 */
 	public int getCurrentPlayer(){
 		return this.currentPlayer;
 	}
 	
+	/**
+	 * Visszatér a pálya méretével
+	 */
 	public Point getMapSize(){
 		return this.map.getSize();
 	}
 	
+	/**
+	 * Visszatér az eltelt körök számával
+	 */
 	public int getCurrentRound(){
 		return this.round;
 	}
 	
+	/**
+	 * Visszaadja, hogy véget ért-e a játék
+	 */
 	public boolean gameEnded(){
 		return this.gameEnded;
 	}

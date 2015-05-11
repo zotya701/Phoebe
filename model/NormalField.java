@@ -102,7 +102,7 @@ public class NormalField implements Field{
 	}
 	
 	/**
-	 * 
+	 * A NormalField pozíciójával tér vissza
 	 */
 	public Point getPosition(){
 		return this.position;
