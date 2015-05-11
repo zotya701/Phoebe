@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import model.*;
 
 /**
- * A hozz√° tartoz√≥ NormalField grafikus megjelen√≠t√©s√©√©rt felel√µs oszt√°ly
+ * A hozz· tartozÛ NormalField grafikus megjelenÌtÈsÈÈrt felelıs oszt·ly
  *
  */
 
@@ -16,7 +16,7 @@ public class NormalFieldView implements Drawable{
 	private NormalField normalField;
 	
 	/**
-	 * Konstruktor, be√°ll√≠tja a normalField attrib√∫tumot a kapott nf referenci√°ra
+	 * Konstruktor, be·llÌtja a normalField attrib˙tumot a kapott nf referenci·ra
 	 * @param nf
 	 */
 	
@@ -25,20 +25,20 @@ public class NormalFieldView implements Drawable{
 	}
 	
 	/**
-	 * Kirajzolja a hozz√° tartoz√≥ NormalField objektumot
+	 * Kirajzolja a hozz· tartozÛ NormalField objektumot
 	 */
 	
 	@Override
 	public void Draw(Graphics2D g2){
-		g2.setColor(Color.WHITE);														//kirajzol egy feh√©r n√©gyzetet
+		g2.setColor(Color.WHITE);														//kirajzol egy fehÈr nÈgyzetet
 		g2.fillRect(normalField.getPosition().x*25, normalField.getPosition().y*25, 25, 25);
-		g2.setColor(Color.BLACK);														//rajzol a n√©gyzet k√∂r√© egy fekete keretet
+		g2.setColor(Color.BLACK);														//rajzol a nÈgyzet kˆrÈ egy fekete keretet
 		g2.drawRect(normalField.getPosition().x*25, normalField.getPosition().y*25, 25, 25);
 	}
 	
 	
 	/**
-	 * Visszaadja a kirajzol√°si priorit√°st
+	 * Visszaadja a kirajzol·si priorit·st
 	 */
 	
 	@Override
@@ -47,7 +47,7 @@ public class NormalFieldView implements Drawable{
 	}
 	
 	/**
-	 * Igazzal t√©r vissza ha a kapott referencia megegyezik a normalField attrib√∫tummal
+	 * Igazzal tÈr vissza ha a kapott referencia megegyezik a normalField attrib˙tummal
 	 */
 	
 	public boolean equals(Object o){
@@ -55,7 +55,7 @@ public class NormalFieldView implements Drawable{
 	}
 	
 	/**
-	 * √ñsszehasonl√≠tja a kapott Drawable priorit√°s√°t a saj√°tj√°val, majd visszaadja az eredm√©nyt
+	 * ÷sszehasonlÌtja a kapott Drawable priorit·s·t a saj·tj·val, majd visszaadja az eredmÈnyt
 	 */
 	
 	public int compareTo(Drawable d){
