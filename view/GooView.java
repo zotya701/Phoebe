@@ -29,7 +29,6 @@ public class GooView implements Drawable{
 		g2.setColor(Color.GREEN);
 		int h=goo.getHealth();
 		g2.fillOval(goo.getPosition().x*25+13-(int)(h*2.5), goo.getPosition().y*25+12-h*2, h*5, h*5);
-		 
 	}
 	
 	/**
