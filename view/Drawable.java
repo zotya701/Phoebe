@@ -1,4 +1,5 @@
 package view;
+
 import java.awt.Graphics2D;
 
 public interface Drawable extends Comparable<Drawable>{
