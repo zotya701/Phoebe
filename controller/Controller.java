@@ -79,7 +79,7 @@ public class Controller {
 	
 	public void btnJumpEventHandler(){
 		if(gm.gameEnded()){
-			view.showNextCard();
+			view.showNextCard();								//ha vége a játéknak, akkor a fõképernyõre viszi a nézetet
 		}
 		else{												
 			gm.step();											//egyébként folytatódik a játék a következõ lépéssel
